@@ -1,4 +1,3 @@
-
 import 'package:car_loan/pages/consumer_loans.dart';
 import 'package:car_loan/utils/colors.dart';
 import 'package:car_loan/widgets/app_bar.dart';
@@ -13,15 +12,15 @@ class Welcome extends StatelessWidget {
       appBar: appBar(context, leading: true, popAction: false),
       body: Column(
         children: [
-          Image.asset('assets/welcome/welcome_pic.png'),
+          Image.asset(strings.welcome_pic),
           Padding(
-            padding: const EdgeInsets.fromLTRB(50.0,30.0,50.0,15.0),
+            padding: const EdgeInsets.fromLTRB(50.0, 30.0, 50.0, 15.0),
             child: Text(
               strings.welcomeTitle,
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 24,
-                  fontFamily: 'OpenSans',
+                  fontFamily: strings.openSans_font,
                   fontWeight: FontWeight.bold,
                   color: AppColors.black),
             ),
@@ -29,32 +28,31 @@ class Welcome extends StatelessWidget {
           Text(
             strings.welcomeSubtitle,
             style: TextStyle(
-                fontSize: 16,
-                fontFamily: 'OpenSans',
-                color: AppColors.gray),
+                fontSize: 16, fontFamily: strings.openSans_font, color: AppColors.gray),
           ),
           Container(
             height: 120.0,
           ),
           Stack(
             alignment: Alignment.center,
-            children:[
-              Image.asset('assets/welcome/get_started_btn.png'),
+            children: [
+              Image.asset(strings.get_started_btn),
               Container(
                 height: 35,
                 width: 264,
                 child: InkWell(
-                  onTap: () => Navigator.pushNamed(context, strings.consumer_loans_route),
+                  onTap: () => Navigator.pushNamed(
+                      context, strings.consumer_loans_route),
                 ),
               )
-            ] ,
+            ],
           ),
           InkWell(
             onTap: () => {},
-            child: Image.asset('assets/welcome/learn_more_btn.png'),
+            child: Image.asset(strings.learn_more_btn),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(90.0,30.0,90.0,20.0),
+            padding: const EdgeInsets.fromLTRB(90.0, 30.0, 90.0, 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -2,6 +2,7 @@ import 'package:car_loan/pages/auto_loan_method.dart';
 import 'package:car_loan/pages/recommended_car_features.dart';
 import 'package:car_loan/utils/colors.dart';
 import 'package:car_loan/utils/strings.dart' as strings;
+import 'package:car_loan/widgets/action_button.dart';
 import 'package:car_loan/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -51,26 +52,10 @@ class _RecommendedCarLifestyleState extends State<RecommendedCarLifestyle> {
           appBar(context, popAction: true, leading: true, color: AppColors.bg),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: options.contains(true)
-          ? Container(
-              height: 48,
-              width: 264,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    elevation: 5.0,
-                    onPrimary: AppColors.green,
-                    primary: AppColors.green,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                  ),
-                  onPressed: _navigateAccordingToOption,
-                  child: Text(
-                    strings.cont,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  )))
+          ? AppActionButton(
+              title: strings.cont,
+              routeFunction: _navigateAccordingToOption,
+            )
           : Container(),
       backgroundColor: AppColors.bg,
       body: SingleChildScrollView(
@@ -88,23 +73,15 @@ class _RecommendedCarLifestyleState extends State<RecommendedCarLifestyle> {
                     height: 2.0,
                     color: AppColors.black,
                     fontSize: 19,
+                    fontFamily: strings.openSans_font,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            consumerLoanCard(
-                'assets/recommended_car_lifestyle/eco_friendly.png',
-                strings.ecoFriendly,
-                0),
-            consumerLoanCard('assets/recommended_car_lifestyle/prestige.png',
-                strings.prestige, 1),
-            consumerLoanCard('assets/recommended_car_lifestyle/heavy_duty.png',
-                strings.heavyDutyOffRoad, 2),
-            consumerLoanCard('assets/recommended_car_lifestyle/sporty.png',
-                strings.sporty, 3),
-            consumerLoanCard(
-                'assets/recommended_car_lifestyle/family_first.png',
-                strings.familyComesfirst,
-                4),
+            consumerLoanCard(strings.eco_friendly, strings.ecoFriendly, 0),
+            consumerLoanCard(strings.prestige_asset, strings.prestige, 1),
+            consumerLoanCard(strings.heavy_duty, strings.heavyDutyOffRoad, 2),
+            consumerLoanCard(strings.sporty_asset, strings.sporty, 3),
+            consumerLoanCard(strings.family_first, strings.familyComesfirst, 4),
           ]),
         ),
       ),
@@ -137,6 +114,7 @@ class _RecommendedCarLifestyleState extends State<RecommendedCarLifestyle> {
                 style: TextStyle(
                     color: AppColors.black,
                     fontSize: 16,
+                    fontFamily: strings.openSans_font,
                     fontWeight: FontWeight.bold),
               ),
             ),

@@ -20,13 +20,13 @@ class AutoLoanMethod extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             InkWell(
-              child:
-              optionCard('assets/auto_loan/find_your_car.png',
-                  strings.findYourCar, strings.findYourCar_description),
-              onTap: () => Navigator.pushNamed(context, strings.find_your_car_route),
+              child: optionCard(strings.find_your_car, strings.findYourCar,
+                  strings.findYourCar_description),
+              onTap: () =>
+                  Navigator.pushNamed(context, strings.find_your_car_route),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(50.0,25.0,50.0,25.0),
+              padding: const EdgeInsets.fromLTRB(50.0, 25.0, 50.0, 25.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -42,7 +42,7 @@ class AutoLoanMethod extends StatelessWidget {
                       strings.or,
                       style: TextStyle(
                           color: AppColors.black,
-                          fontFamily: 'OpenSans',
+                          fontFamily: strings.openSans_font,
                           fontSize: 16,
                           fontWeight: FontWeight.w600),
                     ),
@@ -56,8 +56,8 @@ class AutoLoanMethod extends StatelessWidget {
                 ],
               ),
             ),
-            optionCard('assets/auto_loan/only_want_loan.png',
-                strings.onlyTheLoan, strings.onlyTheLoan_description),
+            optionCard(strings.only_want_loan, strings.onlyTheLoan,
+                strings.onlyTheLoan_description),
           ],
         ),
       ),
@@ -67,7 +67,6 @@ class AutoLoanMethod extends StatelessWidget {
   optionCard(String image, String title, String description) {
     return Container(
       height: 248,
-
       child: Card(
         elevation: 10.0,
         child: Column(
@@ -84,7 +83,7 @@ class AutoLoanMethod extends StatelessWidget {
                   color: AppColors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'OpenSans',
+                  fontFamily: strings.openSans_font,
                 ),
               ),
             ),
@@ -96,7 +95,7 @@ class AutoLoanMethod extends StatelessWidget {
                 style: TextStyle(
                   color: AppColors.description,
                   fontSize: 14,
-                  fontFamily: 'OpenSans',
+                  fontFamily: strings.openSans_font,
                 ),
               ),
             ),

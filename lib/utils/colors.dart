@@ -10,4 +10,5 @@ class AppColors {
   static Color btnShadow = Color(0x226B5640);
   static Color selectedCard = Color(0xFFF9FDFC);
   static Color description = Color(0xFF7F868F);
+  static Color lightGreen = Color(0xFFD5F1E9);
 }

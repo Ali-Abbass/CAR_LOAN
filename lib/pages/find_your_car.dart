@@ -20,13 +20,12 @@ class FindYourCar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             InkWell(
-              child: optionCard('assets/find_your_car/car_matches.png',
-                  strings.carMatches),
-              onTap: () => Navigator.pushNamed(context, strings.recommended_car_lifestyle_route),
+              child: optionCard(strings.car_matches, strings.carMatches),
+              onTap: () => Navigator.pushNamed(
+                  context, strings.recommended_car_lifestyle_route),
             ),
-            
             Padding(
-              padding: const EdgeInsets.fromLTRB(50.0,35.0,50.0,35.0),
+              padding: const EdgeInsets.fromLTRB(50.0, 35.0, 50.0, 35.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -42,7 +41,7 @@ class FindYourCar extends StatelessWidget {
                       strings.or,
                       style: TextStyle(
                           color: AppColors.black,
-                          fontFamily: 'OpenSans',
+                          fontFamily: strings.openSans_font,
                           fontSize: 16,
                           fontWeight: FontWeight.w600),
                     ),
@@ -56,9 +55,7 @@ class FindYourCar extends StatelessWidget {
                 ],
               ),
             ),
-
-            optionCard('assets/find_your_car/car_on_your_mind.png',
-                strings.carOnYourMind),
+            optionCard(strings.car_on_your_mind, strings.carOnYourMind),
           ],
         ),
       ),
@@ -77,7 +74,7 @@ class FindYourCar extends StatelessWidget {
           children: [
             Container(width: 152, child: Image.asset(image)),
             Padding(
-              padding: const EdgeInsets.fromLTRB(30.0,15.0,30.0,15.0),
+              padding: const EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0),
               child: Text(
                 title,
                 textAlign: TextAlign.center,
@@ -85,7 +82,7 @@ class FindYourCar extends StatelessWidget {
                   color: AppColors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'OpenSans',
+                  fontFamily: strings.openSans_font,
                 ),
               ),
             ),

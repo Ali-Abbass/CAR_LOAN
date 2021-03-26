@@ -1,4 +1,3 @@
-
 import 'package:car_loan/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:car_loan/utils/strings.dart' as strings;
@@ -6,7 +5,7 @@ import 'package:car_loan/utils/strings.dart' as strings;
 Widget appBar(BuildContext context,
     {bool popAction, bool leading, Color color, String title}) {
   return AppBar(
-centerTitle: true,
+    centerTitle: true,
     title: Text(
       title ?? '',
       textAlign: TextAlign.center,
@@ -22,13 +21,15 @@ centerTitle: true,
           ? IconButton(
               icon: Icon(Icons.clear),
               color: AppColors.black,
-              onPressed: () => Navigator.popUntil(context, ModalRoute.withName(strings.welcome_route)),
+              onPressed: () => Navigator.popUntil(
+                  context, ModalRoute.withName(strings.welcome_route)),
             )
           : Container()
     ],
     leading: leading
         ? IconButton(
-            icon: Container(height:16,child: Image.asset('assets/path_backward.png')),
+            icon: Container(
+                height: 16, child: Image.asset('assets/path_backward.png')),
             onPressed: () => Navigator.of(context).pop(),
           )
         : Container(),

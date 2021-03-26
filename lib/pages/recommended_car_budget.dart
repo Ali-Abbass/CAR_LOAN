@@ -1,4 +1,5 @@
 import 'package:car_loan/utils/colors.dart';
+import 'package:car_loan/widgets/action_button.dart';
 import 'package:car_loan/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:car_loan/utils/strings.dart' as strings;
@@ -11,7 +12,6 @@ class RecommendedCarBudget extends StatefulWidget {
 
 class _RecommendedCarBudgetState extends State<RecommendedCarBudget> {
   double minimumBudget = 15;
-
   double maximumBudget = 50;
 
   @override
@@ -20,26 +20,12 @@ class _RecommendedCarBudgetState extends State<RecommendedCarBudget> {
       appBar: appBar(context, leading: true, popAction: true),
       backgroundColor: Colors.white,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Container(
-          height: 48,
-          width: 264,
-          child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 5.0,
-                onPrimary: AppColors.green,
-                primary: AppColors.green,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
-              ),
-              onPressed: () => {},
-              child: Text(
-                strings.seeRecommendedCars,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ))),
+      floatingActionButton: AppActionButton(
+          title: strings.seeRecommendedCars,
+          routeFunction: () => Navigator.pushNamed(
+                context,
+                strings.recommended_cars_route,
+              )),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Center(
@@ -53,7 +39,7 @@ class _RecommendedCarBudgetState extends State<RecommendedCarBudget> {
                   color: AppColors.black,
                   fontSize: 19,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'OpenSans',
+                  fontFamily: strings.openSans_font,
                 ),
               ),
               Padding(
@@ -65,7 +51,7 @@ class _RecommendedCarBudgetState extends State<RecommendedCarBudget> {
                     height: 2.0,
                     color: AppColors.description,
                     fontSize: 14,
-                    fontFamily: 'OpenSans',
+                    fontFamily: strings.openSans_font,
                   ),
                 ),
               ),
@@ -81,35 +67,35 @@ class _RecommendedCarBudgetState extends State<RecommendedCarBudget> {
                         color: AppColors.description,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
+                        fontFamily: strings.openSans_font,
                       )),
                   Text(minimumBudget.toInt().toString() + ',000',
                       style: TextStyle(
                         color: AppColors.black,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
+                        fontFamily: strings.openSans_font,
                       )),
                   Text(strings.minus,
                       style: TextStyle(
                         color: AppColors.black,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
+                        fontFamily: strings.openSans_font,
                       )),
                   Text(strings.kwd,
                       style: TextStyle(
                         color: AppColors.description,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
+                        fontFamily: strings.openSans_font,
                       )),
                   Text(maximumBudget.toInt().toString() + ',000',
                       style: TextStyle(
                         color: AppColors.black,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
+                        fontFamily: strings.openSans_font,
                       )),
                 ],
               ),

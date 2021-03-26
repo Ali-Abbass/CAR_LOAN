@@ -1,4 +1,3 @@
-
 import 'package:car_loan/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:car_loan/utils/strings.dart' as strings;
@@ -19,7 +18,7 @@ class ChooseLanguage extends StatelessWidget {
                 'Select your preferred language',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'OpenSans',
+                    fontFamily: strings.openSans_font,
                     fontSize: 19,
                     color: AppColors.black),
               ),
@@ -32,7 +31,8 @@ class ChooseLanguage extends StatelessWidget {
               color: AppColors.lightGray,
             ),
             InkWell(
-                onTap: () => Navigator.pushReplacementNamed(context, strings.welcome_route),
+                onTap: () => Navigator.pushReplacementNamed(
+                    context, strings.welcome_route),
                 child: Container(
                   height: 50.0,
                   child: Row(
@@ -42,7 +42,7 @@ class ChooseLanguage extends StatelessWidget {
                         'English',
                         style: TextStyle(
                             color: AppColors.black,
-                            fontFamily: 'OpenSans',
+                            fontFamily: strings.openSans_font,
                             fontSize: 16,
                             fontWeight: FontWeight.w600),
                       ),
@@ -64,7 +64,7 @@ class ChooseLanguage extends StatelessWidget {
                     'عربي',
                     style: TextStyle(
                         color: AppColors.black,
-                        fontFamily: 'OpenSans',
+                        fontFamily: strings.openSans_font,
                         fontSize: 16,
                         fontWeight: FontWeight.w600),
                   ),

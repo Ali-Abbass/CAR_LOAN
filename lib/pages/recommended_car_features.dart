@@ -1,7 +1,7 @@
-
 import 'package:car_loan/pages/recommended_car_budget.dart';
 import 'package:car_loan/utils/colors.dart';
 import 'package:car_loan/utils/strings.dart' as strings;
+import 'package:car_loan/widgets/action_button.dart';
 import 'package:car_loan/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class _RecommendedCarFeaturesState extends State<RecommendedCarFeatures> {
       options[index] = !options[index];
     });
     for (int i = 0; i < options.length; i++) {
-      if (i != index && (index == index1 ? i != index2 : i != index1 )) {
+      if (i != index && (index == index1 ? i != index2 : i != index1)) {
         setState(() {
           options[i] = false;
         });
@@ -28,15 +28,14 @@ class _RecommendedCarFeaturesState extends State<RecommendedCarFeatures> {
     }
   }
 
-  bool _twoSelected(){
-    int count =0;
-    for(int i = 0; i < options.length; i++){
-      if(options[i] == true){
+  bool _twoSelected() {
+    int count = 0;
+    for (int i = 0; i < options.length; i++) {
+      if (options[i] == true) {
         count++;
       }
     }
-    if(count == 2)
-      return true;
+    if (count == 2) return true;
     return false;
   }
 
@@ -44,39 +43,24 @@ class _RecommendedCarFeaturesState extends State<RecommendedCarFeatures> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-      appBar(context, popAction: true, leading: true, color: AppColors.bg),
+          appBar(context, popAction: true, leading: true, color: AppColors.bg),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: _twoSelected()
-          ? Container(
-          height: 48,
-          width: 264,
-          child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 5.0,
-                onPrimary: AppColors.green,
-                primary: AppColors.green,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
-              ),
-              onPressed: () => Navigator.pushNamed(context, strings.recommended_car_budget_route),
-              child: Text(
-                strings.cont,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              )))
+          ? AppActionButton(
+              title: strings.cont,
+              routeFunction: () => Navigator.pushNamed(
+                  context, strings.recommended_car_budget_route),
+            )
           : Container(),
       backgroundColor: AppColors.bg,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
           child:
-          Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Padding(
               padding:
-              const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 30.0),
+                  const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 30.0),
               child: Text(
                 strings.topFeaturesTitle,
                 textAlign: TextAlign.center,
@@ -84,20 +68,23 @@ class _RecommendedCarFeaturesState extends State<RecommendedCarFeatures> {
                     height: 2.0,
                     color: AppColors.black,
                     fontSize: 19,
+                    fontFamily: strings.openSans_font,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            consumerLoanCard('assets/recommended_car_features/power.png', strings.power, 0),
-            consumerLoanCard('assets/recommended_car_features/roar.png', strings.rourEngineSound, 1),
-            consumerLoanCard('assets/recommended_car_features/safety.png', strings.safety, 2),
-            consumerLoanCard('assets/recommended_car_features/design.png', strings.design, 3),
-            consumerLoanCard('assets/recommended_car_features/entertainment.png', strings.entertainment, 4),
-            consumerLoanCard('assets/recommended_car_features/easy_to_park.png', strings.easyToPark, 5),
-            consumerLoanCard('assets/recommended_car_features/lowest_co2.png', strings.lowestCO2, 6),
-            consumerLoanCard('assets/recommended_car_features/comfort.png', strings.comfort, 7),
-            consumerLoanCard('assets/recommended_car_features/performance.png', strings.performance, 8),
-            consumerLoanCard('assets/recommended_car_features/leading_trailing.png', strings.leadingTrailing, 9),
-            consumerLoanCard('assets/recommended_car_features/fuel_efficient.png', strings.fuelEfficient, 10),
+            consumerLoanCard(strings.power_asset, strings.power, 0),
+            consumerLoanCard(strings.roar, strings.rourEngineSound, 1),
+            consumerLoanCard(strings.safety_asset, strings.safety, 2),
+            consumerLoanCard(strings.design_asset, strings.design, 3),
+            consumerLoanCard(
+                strings.entertainment_asset, strings.entertainment, 4),
+            consumerLoanCard(strings.easy_to_park, strings.easyToPark, 5),
+            consumerLoanCard(strings.lowest_co2, strings.lowestCO2, 6),
+            consumerLoanCard(strings.comfort_asset, strings.comfort, 7),
+            consumerLoanCard(strings.performance_asset, strings.performance, 8),
+            consumerLoanCard(
+                strings.leading_trailing, strings.leadingTrailing, 9),
+            consumerLoanCard(strings.fuel_efficient, strings.fuelEfficient, 10),
           ]),
         ),
       ),
@@ -130,6 +117,7 @@ class _RecommendedCarFeaturesState extends State<RecommendedCarFeatures> {
                 style: TextStyle(
                     color: AppColors.black,
                     fontSize: 16,
+                    fontFamily: strings.openSans_font,
                     fontWeight: FontWeight.bold),
               ),
             ),

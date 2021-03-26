@@ -1,6 +1,7 @@
 import 'package:car_loan/pages/auto_loan_method.dart';
 import 'package:car_loan/utils/colors.dart';
 import 'package:car_loan/utils/strings.dart' as strings;
+import 'package:car_loan/widgets/action_button.dart';
 import 'package:car_loan/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -53,26 +54,10 @@ class _ConsumerLoansState extends State<ConsumerLoans> {
           appBar(context, popAction: true, leading: false, color: AppColors.bg),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: options.contains(true)
-          ? Container(
-              height: 48,
-              width: 264,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    elevation: 5.0,
-                    onPrimary: AppColors.green,
-                    primary: AppColors.green,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                  ),
-                  onPressed: _navigateAccordingToOption,
-                  child: Text(
-                    strings.cont,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
-                  )))
+          ? AppActionButton(
+              title: strings.cont,
+              routeFunction: _navigateAccordingToOption,
+            )
           : Container(),
       backgroundColor: AppColors.bg,
       body: SingleChildScrollView(
@@ -93,20 +78,18 @@ class _ConsumerLoansState extends State<ConsumerLoans> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            consumerLoanCard('assets/consumer_loan/personal_loan.png',
-                strings.personalLoan, 0),
-            consumerLoanCard('assets/consumer_loan/educational_loan.png',
-                strings.educationalLoan, 1),
+            consumerLoanCard(strings.personal_loan, strings.personalLoan, 0),
             consumerLoanCard(
-                'assets/consumer_loan/auto_loan.png', strings.autoLoan, 2),
-            consumerLoanCard('assets/consumer_loan/medical_care_financing.png',
+                strings.educational_loan, strings.educationalLoan, 1),
+            consumerLoanCard(strings.auto_loan, strings.autoLoan, 2),
+            consumerLoanCard(strings.medical_care_financing,
                 strings.medicalCareFinancing, 3),
-            consumerLoanCard('assets/consumer_loan/furniture_appliances.png',
-                strings.furnitureAppliances, 4),
-            consumerLoanCard('assets/consumer_loan/housing_financing.png',
-                strings.housingFinancing, 5),
-            consumerLoanCard('assets/consumer_loan/top_up_financing.png',
-                strings.topUpFinancing, 6),
+            consumerLoanCard(
+                strings.furniture_appliances, strings.furnitureAppliances, 4),
+            consumerLoanCard(
+                strings.housing_financing, strings.housingFinancing, 5),
+            consumerLoanCard(
+                strings.top_up_financing, strings.topUpFinancing, 6),
           ]),
         ),
       ),

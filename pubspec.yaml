@@ -71,6 +71,8 @@ flutter:
     - assets/find_your_car/
     - assets/recommended_car_lifestyle/
     - assets/recommended_car_features/
+    - assets/recommended_cars/
+    - assets/details_of_selected_car/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
